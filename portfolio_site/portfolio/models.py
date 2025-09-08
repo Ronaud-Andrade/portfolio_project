@@ -11,3 +11,11 @@ class Projetos_novos(models.Model):
     def __str__(self):
         return self.title
     
+
+class Habili_contatos(models.Model):
+    pessoa = models.CharField(max_length=50)
+    habilidades = models.TextField()
+    contato = models.CharField(max_length=20, null=True) #+55 (83) 9 9999-9999
+
+
+
