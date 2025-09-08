@@ -9,8 +9,17 @@
 </head>
 <body>
 
-    <h1>Bem-vindo ao meu Portfolio!</h1>
-    <p>Olá, {{ nome }}!</p>
+    <h1>Bem-vindo ao nosso Portfolio!</h1>
+
+    {% for projeto_r in projetos_ronaud %}
+        <h2>{{ projeto_r.title }} / {{projeto_r.dono}}</h2>
+
+        <h3>{{ projeto_r.description }}</h3>
+        <img src="{{ projeto_r.image.url }}"></img>
+    {% endfor %}
+
     <p>Esta é uma página criada com template.</p>
+
+
 </body>
 </html>
