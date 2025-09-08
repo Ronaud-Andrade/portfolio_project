@@ -1,9 +1,14 @@
+{% load static %} <!--Carregar arquivo estatico-->
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_inicio.css' %}">
+
     <title>Meu Portfolio</title>
 </head>
 <body>
+
     <h1>Bem-vindo ao meu Portfolio!</h1>
     <p>Olá, {{ nome }}!</p>
     <p>Esta é uma página criada com template.</p>
