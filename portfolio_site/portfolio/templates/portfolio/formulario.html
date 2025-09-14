@@ -1,0 +1,39 @@
+{% load static %} <!--Carregar arquivo estatico-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'imagens_site/formulario.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+    <title>Formulário de Contato</title>
+</head>
+<body>
+
+    <main class="container-form">
+        <form action="" method="get" class="formulario">
+            <fieldset>
+                <legend>Formulário de Contato</legend>
+
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" placeholder="Seu nome">
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="exemplo@gmail.com">
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea name="mensagem" id="mensagem" rows="5" placeholder="Escreva aqui"></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

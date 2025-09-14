@@ -1,11 +1,10 @@
 {% load static %} <!--Carregar arquivo estatico-->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'imagens_site/favicon.ico' %}" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
@@ -23,61 +22,61 @@
 
     <main>
         <!-- Seção Integrantes -->
-        <section id="integrantes" class="py-5 text-center">
-
+        <section id="integrantes" class="text-center">
             <h2>Integrantes</h2>
 
             <div id="container-de-perfil" class="d-flex justify-content-center flex-wrap gap-3">
                 <!-- Perfil 1 -->
                 <div class="perfil p-3 rounded shadow">
-                    <h3>Ronaud Andrade</h3> <!--Imagem do perfil de preferencia de (225px)-->
-                    <img src="/img/perfil1.jpg" alt="Foto de Ronaud Andrade" class="img-fluid rounded">
-                    <p>Estudante cursando Análise e Desenvolvimento de Sistemas (ADS) no centro acadêmico UNIFIP em Patos-PB.</p>
+                    <h3>{{habili_ronaud.pessoa}}</h3>
+                    <img src="{{habili_ronaud.image.url}}" alt="Foto de Ronaud Andrade" class="img-fluid rounded">
+                    <p>{{habili_ronaud.habilidades}}</p>
                     <h3>Habilidades</h3>
                     <ul>
-                        <li>Lógica de Programação<li><br>
-
-                        <li>Domínio de linguagens como Python, Java<li><br>
-
+                        <li>Lógica de Programação</li>
+                        <li>Domínio de linguagens como Python, Java</li>
                         <li>Desenvolvimento Web: HTML, CSS</li>
                     </ul>
+                    <h3>Contato</h3>
+                    <p>{{habili_joao.contato}}</p>
                 </div>
 
                 <!-- Perfil 2 -->
                 <div class="perfil p-3 rounded shadow">
-                    <h3>Iago Nascimento</h3> <!--Imagem do perfil de preferencia de (225px)-->
-                    <img src="/img/perfil2.jpg" alt="Foto de Iago Nascimento" class="img-fluid rounded">
-                    <p>Estudante cursando Análise e Desenvolvimento de Sistemas (ADS) no centro acadêmico UNIFIP em Patos-PB.</p>
+                    <h3>{{habili_iago.pessoa}}</h3>
+                    <img src="{{habili_iago.image.url}}" alt="Foto de Iago Nascimento" class="img-fluid rounded">
+                    <p>{{habili_iago.habilidades}}</p>
                     <h3>Habilidades</h3>
                     <ul>
-                        <li>Lógica de Programação<li><br>
-
-                        <li>Domínio de linguagens como Python, Java<li><br>
-
+                        <li>Lógica de Programação</li>
+                        <li>Domínio de linguagens como Python, Java</li>
                         <li>Desenvolvimento Web: HTML, CSS</li>
                     </ul>
+
+                    <h3>Contato</h3>
+                    <p>{{habili_joao.contato}}</p>
                 </div>
 
                 <!-- Perfil 3 -->
                 <div class="perfil p-3 rounded shadow">
-                    <h3>João Gabriel</h3> <!--Imagem do perfil de preferencia de (225px)-->
-                    <img src="/img/perfil3.jpg" alt="Foto de João Gabriel" class="img-fluid rounded">
-                    <p>Estudante cursando Análise e Desenvolvimento de Sistemas (ADS) no centro acadêmico UNIFIP em Patos-PB.</p>
+                    <h3>{{habili_joao.pessoa}}</h3>
+                    <img src="{{habili_joao.image.url}}" alt="Foto de João Gabriel" class="img-fluid rounded">
+                    <p>{{habili_joao.habilidades}}</p>
                     <h3>Habilidades</h3>
                     <ul>
-                        <li>Lógica de Programação<li><br>
-
-                        <li>Domínio de linguagens como Python, Java<li><br>
-
+                        <li>Lógica de Programação</li>
+                        <li>Domínio de linguagens como Python, Java</li>
                         <li>Desenvolvimento Web: HTML, CSS</li>
                     </ul>
-                </div>
 
+                    <h3>Contato</h3>
+                    <p>{{habili_joao.contato}}</p>
+                </div>
             </div>
         </section>
 
         <!-- Seção Projetos -->
-        <section id="projetos" class="py-5 text-center">
+        <section id="projetos" class="text-center">
             <h2>Projetos</h2>
             <div id="carouselExampleIndicators" class="carousel slide mx-auto" style="max-width: 280px;" data-ride="carousel">
 
@@ -87,31 +86,34 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
 
-                <!--Imagem do carrosel define o tamanho dele-->
                 <div class="carousel-inner">
+                    
                     <div class="carousel-item active">
-                        <img class="d-block w-100 rounded shadow" src="/img/placeholder.jpg" alt="Projeto 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Alien Xvideos</h5>
-                            <p>Aliens gulosas a uma galáxia de distância</p>
-                        </div>
+                        <a href="https://github.com/Ronaud-Andrade/portfolio_project">
+                            <!--<img class="d-block w-100 rounded shadow" src="/img/pagina-de-login.webp" alt="Projeto 1">-->
+                            <img class="d-block w-100 rounded shadow" src="{{projetos_ronaud.image.url}}" alt="{{projetos_ronaud.title}}">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{projetos_ronaud.title}}</h5>
+                                <p>{{projetos_ronaud.description}}</p>
+                            </div>
+                        </a>
                     </div>
 
-                    <!--Imagem do carrosel define o tamanho dele-->
                     <div class="carousel-item">
-                        <img class="d-block w-100 rounded shadow" src="/img/placeholder.jpg" alt="Projeto 2">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Alien Xvideos</h5>
-                            <p>Aliens gulosas a uma galáxia de distância</p>
-                        </div>
+                        <a href="https://github.com/Ronaud-Andrade/binary-base-calculator">
+                            <img class="d-block w-100 rounded shadow" src="{{projetos_iago.image.url}}" alt="Projeto 2">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{projetos_iago.title}}</h5>
+                                <p>{{projetos_iago.description}}</p>
+                            </div>
+                        </a>
                     </div>
 
-                    <!--Imagem do carrosel define o tamanho dele-->
                     <div class="carousel-item">
-                        <img class="d-block w-100 rounded shadow" src="/img/placeholder.jpg" alt="Projeto 3">
+                        <img class="d-block w-100 rounded shadow" src="/img/blog-de-noticias.webp" alt="Projeto 3">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Alien Xvideos</h5>
-                            <p>Aliens gulosas a uma galáxia de distância</p>
+                            <h5>Blog de Notícias</h5>
+                            <p>100% verificado pelo IGN</p>
                         </div>
                     </div>
                 </div>
@@ -125,6 +127,14 @@
                     <span class="sr-only">Próximo</span>
                 </a>
             </div>
+        </section>
+
+        <!-- Seção Formulário -->
+        <section id="formulario" class="text-center">
+            <h2>Formulário de Contato</h2>
+            <a href="{% url 'portfolio:form_view' %}">
+                <img src="{% static 'imagens_site/formulario.png' %}" alt="Formulário">
+            </a>
         </section>
     </main>
 

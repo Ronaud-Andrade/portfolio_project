@@ -25,7 +25,7 @@ header h1 {
 
 /* ===== Seções ===== */
 section {
-    padding: 20px 20px;
+    padding: 60px 20px; /* mesmo espaçamento para TODAS as seções */
     text-align: center;
 }
 
@@ -44,7 +44,7 @@ h2 {
 }
 
 .perfil {
-    flex: 1 1 250px; /* permite crescer e encolher */
+    flex: 1 1 250px;
     max-width: 280px;
     padding: 20px;
     background: #6546d2;
@@ -73,6 +73,7 @@ h2 {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 .perfil img {
@@ -95,6 +96,11 @@ ul {
     object-fit: cover;  
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+}
+
+#projetos .carousel-caption h5,
+#projetos .carousel-caption p {
+    color: #a78bfa !important;
 }
 
 /* ===== Footer ===== */

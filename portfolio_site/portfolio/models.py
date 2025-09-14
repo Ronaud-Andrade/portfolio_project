@@ -16,6 +16,7 @@ class Habili_contatos(models.Model):
     pessoa = models.CharField(max_length=50)
     habilidades = models.TextField()
     contato = models.CharField(max_length=20, null=True) #+55 (83) 9 9999-9999
+    image = models.ImageField(upload_to='projects/', null=True)
 
 
 
