@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolio',
     'django_extensions',
-    #'Pillow',
 ]
 
 MIDDLEWARE = [
