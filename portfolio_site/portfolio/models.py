@@ -18,5 +18,11 @@ class Habili_contatos(models.Model):
     contato = models.CharField(max_length=20, null=True) #+55 (83) 9 9999-9999
     image = models.ImageField(upload_to='projects/', null=True)
 
+class Form_tabelas():
+    nome = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    mensagem = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 

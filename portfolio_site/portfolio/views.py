@@ -23,6 +23,7 @@ def home(request):
 def index(request):
     projetos_ronaud = Projetos_novos.objects.filter(dono='Ronaud').first()
     projetos_iago = Projetos_novos.objects.filter(dono='Iago').first()
+    project_fortunex = Projetos_novos.objects.filter(title = 'Fortunex').first()
 
     habili_ronaud = Habili_contatos.objects.filter(pessoa = 'Ronaud Andrade').first()
     habili_iago = Habili_contatos.objects.filter(pessoa = 'Iago Rodrigues').first()
@@ -32,6 +33,7 @@ def index(request):
     context = {
         'projetos_ronaud' : projetos_ronaud, 
         'projetos_iago' : projetos_iago, 
+        'project_fortunex' : project_fortunex,
 
         'habili_ronaud' :  habili_ronaud,
         'habili_iago' : habili_iago,
@@ -44,9 +46,12 @@ def form_view(request):
     projetos_ronaud = Projetos_novos.objects.filter(dono='Ronaud').first()
     projetos_iago = Projetos_novos.objects.filter(dono='Iago').first()
 
+
     habili_ronaud = Habili_contatos.objects.filter(pessoa = 'Ronaud Andrade').first()
     habili_iago = Habili_contatos.objects.filter(pessoa = 'Iago Rodrigues').first()
     habili_joao = Habili_contatos.objects.filter(pessoa = 'João Gabriel').first()
+
+
 
 
     context = {
@@ -56,6 +61,7 @@ def form_view(request):
         'habili_ronaud' :  habili_ronaud,
         'habili_iago' : habili_iago,
         'habili_joao' : habili_joao,
+
     }
 
     return render(request, 'portfolio/formulario.html', context)
